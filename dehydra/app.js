@@ -1,7 +1,7 @@
 // PIXI Application
 const app = new PIXI.Application({
-  width: 400,
-  height: 400,
+  width: 600,   // Increased width
+  height: 600,  // Increased height
   backgroundAlpha: 0
 });
 document.getElementById("game-container").appendChild(app.view);
@@ -24,15 +24,15 @@ let lastWaterTime = localStorage.getItem("lastWaterTime")
   : Date.now();
 
 const statusMessages = [
-  "Your plant is thriving 🌱",
-  "Looking pretty good 🍃",
-  "Meh... staying alive 😐",
-  "Looking rough... 😟",
-  "On the brink of death 💀"
+  "Your plant is thriving ",
+  "Looking pretty good ",
+  "Meh... staying alive ",
+  "Looking rough... ",
+  "On the brink of death "
 ];
 
 // Thresholds in hours until plant worsens
-const decayThresholds = [0, 2, 4, 8, 16];
+const decayThresholds = [0, 0.0014, 0.0028, 0.0042, 0.0056]; // 5s steps
 
 // Load assets
 PIXI.Assets.addBundle("plants", {
@@ -65,8 +65,8 @@ PIXI.Assets.loadBundle("plants").then((assets) => {
   // Update immediately on load
   updatePlantMood();
 
-  // Check plant mood every minute
-  setInterval(updatePlantMood, 60 * 1000);
+  // Check plant mood every 5 seconds
+  setInterval(updatePlantMood, 5000);
 });
 
 // Calculate hours since last water and update plant
@@ -91,12 +91,12 @@ function changeState(newState) {
 
   gsap.to(plantSprite, {
     alpha: 0,
-    duration: 0.4,
+    duration: 0.15, // Faster fade out
     onComplete: () => {
       // Use loadedAssets for textures
       const assetKeys = ["best", "good", "neutral", "bad", "worst"];
       plantSprite.texture = loadedAssets[assetKeys[newState]];
-      gsap.to(plantSprite, { alpha: 1, duration: 0.4 });
+      gsap.to(plantSprite, { alpha: 1, duration: 0.15 }); // Faster fade in
     }
   });
 }
