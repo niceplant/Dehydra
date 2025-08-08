@@ -57,12 +57,16 @@ Forget badges — here you get:
 
  ### **Diagram:**
 [ LOG WATER ]
+
 ↓
+
 [ UPDATE PLANT STATE ]
+
 ↓
+
 [ ANIMATE CHANGES ]
-↓
-[ SEND GUILT NOTIFICATIONS ]
+
+
 ## 🎥 Project Demo
 
 **Video Demo:** <video controls src="videodemo.mp4" title="Title"></video> — Shows plants reacting in real-time to water logging and degrading over 5-second intervals for testing.
