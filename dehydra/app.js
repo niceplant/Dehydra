@@ -8,13 +8,13 @@ document.getElementById("game-container").appendChild(app.view);
 
 // Placeholder assets (replace with your own pixel art)
 const plantStates = [
-  "assets/plant_best.jpg",    // 0
-  "assets/plant_good.jpg",    // 1
-  "assets/plant_neutral.jpg", // 2
-  "assets/plant_bad.jpg",     // 3
-  "assets/plant_worst.jpg"    // 4
+  "assets/plant_best.png",    // 0
+  "assets/plant_good.png",    // 1
+  "assets/plant_neutral.png", // 2
+  "assets/plant_bad.png",     // 3
+  "assets/plant_worst.png"    // 4
 ];
-const bgPath = "assets/terrarium_bg.jpg";
+const bgPath = "assets/terrarium_bg.png";
 
 // State variables
 let plantSprite;
