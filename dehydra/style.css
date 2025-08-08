@@ -1,0 +1,176 @@
+body {
+  background: #fffceb;
+  color: #2f3e2e;
+  font-family: 'Quicksand', 'DotGothic16', Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+/* Header */
+.header {
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.header-title {
+  font-size: 2.2em;
+  color: #5c7d5c;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px #e1e6cb;
+}
+.header-subtitle {
+  font-size: 1.1em;
+  color: #a2c8a2;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* Game container */
+#game-container {
+  background: #e1e6cb;
+  border: 4px solid #a2c8a2;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(92,125,92,0.10);
+  width: 420px;
+  height: 420px;
+  margin: 32px auto 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Plant character (pixel art sprite) */
+.plant-sprite {
+  image-rendering: pixelated;
+  filter: drop-shadow(0 4px 12px #a2c8a2);
+  transition: transform 0.3s cubic-bezier(.4,2,.6,1), filter 0.3s;
+}
+.plant-sprite.thriving { filter: drop-shadow(0 0 16px #a2c8a2); }
+.plant-sprite.sparkling { animation: sparkle 1.2s infinite; }
+@keyframes sparkle {
+  0%, 100% { filter: drop-shadow(0 0 16px #fff1b5); }
+  50% { filter: drop-shadow(0 0 32px #fff1b5); }
+}
+
+/* Hydration meter (vining progress bar) */
+.hydration-meter {
+  width: 80%;
+  height: 32px;
+  background: linear-gradient(90deg, #e1e6cb 0%, #a2c8a2 100%);
+  border-radius: 16px;
+  margin: 24px auto 0 auto;
+  box-shadow: 0 2px 8px #a2c8a2;
+  position: relative;
+  overflow: hidden;
+}
+.hydration-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #5c7d5c 0%, #a2c8a2 100%);
+  border-radius: 16px;
+  transition: width 0.5s cubic-bezier(.4,2,.6,1);
+}
+.hydration-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #2f3e2e;
+  font-size: 1em;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Daily goals (sunstone stack or glowing ring) */
+.daily-goals {
+  margin: 24px auto 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+.sunstone {
+  width: 32px;
+  height: 32px;
+  background: radial-gradient(circle, #fff1b5 60%, #a2c8a2 100%);
+  border-radius: 50%;
+  box-shadow: 0 0 12px #fff1b5;
+  display: inline-block;
+  margin: 0 2px;
+  border: 2px solid #a2c8a2;
+}
+
+/* Controls */
+.controls {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+.control-btn {
+  background: linear-gradient(90deg, #a2c8a2 0%, #5c7d5c 100%);
+  color: #fffceb;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 28px;
+  font-size: 1.1em;
+  font-family: 'Quicksand', Arial, sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px #a2c8a2;
+  transition: background 0.3s, transform 0.2s;
+}
+.control-btn:hover {
+  background: linear-gradient(90deg, #fff1b5 0%, #a2c8a2 100%);
+  color: #5c7d5c;
+  transform: scale(1.08);
+}
+
+/* Status text */
+#status-text {
+  margin-top: 12px;
+  font-size: 1.1em;
+  color: #5c7d5c;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Ambient sound toggle */
+.ambient-toggle {
+  margin-top: 18px;
+  color: #a2c8a2;
+  font-size: 1em;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.ambient-toggle:hover {
+  color: #5c7d5c;
+}
+
+/* Gentle reminder animation */
+@keyframes leaf-wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}
+.leaf-reminder {
+  display: inline-block;
+  animation: leaf-wiggle 1.2s infinite;
+  color: #a2c8a2;
+  font-size: 1.3em;
+}
+
+/* Utility: pixel art crispness for sprites */
+.pixel-art {
+  image-rendering: pixelated;
+}
+
+/* Responsive for mobile */
+@media (max-width: 600px) {
+  #game-container {
+    width: 98vw;
+    height: 320px;
+    border-radius: 12px;
+  }
+  .header-title { font-size: 1.3em; }
+  
+}
