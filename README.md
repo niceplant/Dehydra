@@ -47,8 +47,9 @@ Forget badges — here you get:
 
 #### Installation
 ```bash
-git clone https://github.com/niceplant/Dehydra.git
-cd DeHydra
+    git clone https://github.com/niceplant/Dehydra.git
+    cd DeHydra
+```
 
 ![plant when ur hydrated](happyplant.png)
 ![plant when u havnt had water](neutralplant.png)
@@ -64,11 +65,13 @@ cd DeHydra
 [ SEND GUILT NOTIFICATIONS ]
 ## 🎥 Project Demo
 
-**Video Demo:** [videodemo.mp4] — Shows plants reacting in real-time to water logging and degrading over 5-second intervals for testing.
+**Video Demo:** <video controls src="videodemo.mp4" title="Title"></video> — Shows plants reacting in real-time to water logging and degrading over 5-second intervals for testing.
 ---
 
 ## 👨‍💻 Team Contributions
 
 - **Nehil:** UI design, pixel art placeholders, mood animations.  
 - **Shravan:** Core logic for hydration tracking, plant state decay system, plant personalities.
+
+
 Made with ❤️ at TinkerHub Useless Projects
